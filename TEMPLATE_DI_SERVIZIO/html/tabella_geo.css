@@ -1,0 +1,55 @@
+.zui-table {
+    border: solid 1px #000000;
+    border-collapse: collapse;
+    border-spacing: 0;
+	border: thin;
+    font: normal 13px Arial, sans-serif;
+    text-align: center; 
+    vertical-align: middle;
+}
+
+td {
+    width: 40px;
+}
+
+td.data {
+    width: 115px;
+    height: 20px;
+    background-color: #F0F3F4;
+}
+
+.zui-table tbody td {
+    border: solid 1px #0c2e2e;
+    color: rgb(0, 0, 0);
+    padding: 4px;
+
+}
+
+
+.title {
+    font: bold 16px Arial, sans-serif;
+
+}
+
+td.intest {
+    padding:0;
+    margin:0;
+    font-size:12px;
+}
+
+.pagenum {
+text-align: center;
+font: normal 13px Arial, sans-serif;
+}
+
+.image{
+    max-height: 540px;
+    min-height: 250px;
+    width: auto;
+  }
+
+  .image_web{
+    max-height: 700px;
+    min-height: 250px;
+    width: auto;
+  }

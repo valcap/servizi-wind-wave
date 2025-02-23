@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="tabella_geo.css">
+  <title>Wind&Wave ForecastTable</title>
+</head>
+
+<body>
+  <p align="center" class="title">Wind and wave forecast for: @stnname @stnlat - @stnlon<br>
+    Automatic Output From Wave and Weather Model</p>
+  <table border="0" class="zui-table" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr style="font-weight: bold" ;>
+        <td width="140" rowspan="4" scope="col">
+          <p><img src="http://www.lamma.toscana.it/sites/default/files/images/loghi/logoLamma.png" width="77">
+          </p>
+          <p>UTC </p>
+        </td>
+        <td colspan="7" bgcolor="#D6E3FB" class="title" scope="col">WIND
+        </td>
+        <td colspan="5" bgcolor="#C8F2C2" class="title" scope="col">WAVES</td>
+        <td colspan="3" bgcolor="#F7D1D1" class="title" scope="col">OTHER CONDITIONS</td>
+      </tr>
+      <tr style="font-weight: bold" ;>
+        <td colspan="3" bgcolor="#D6E3FB" class="intest">10 m</td>
+        <td colspan="3" bgcolor="#D6E3FB" class="intest">50 m</td>
+        <td width="73" bgcolor="#D6E3FB" class="intest">max</td>
+        <td colspan="4" bgcolor="#C8F2C2" class="intest"> significant</td>
+        <td width="73" bgcolor="#C8F2C2" class="intest">max</td>
+        <td bgcolor="#F7D1D1" class="intest">temp</td>
+        <td bgcolor="#F7D1D1" class="intest">clouds</td>
+        <td bgcolor="#F7D1D1" class="intest">pcp</td>
+      </tr>
+      <tr style="font-weight: bold" ;>
+        <td width="73" bgcolor="#D6E3FB" class="intest">dir</td>
+        <td width="73" bgcolor="#D6E3FB" class="intest">dir</td>
+        <td width="73" bgcolor="#D6E3FB" class="intest">spd</td>
+        <td width="73" bgcolor="#D6E3FB" class="intest">dir</td>
+        <td width="73" bgcolor="#D6E3FB" class="intest">dir</td>
+        <td width="73" bgcolor="#D6E3FB" class="intest">spd</td>
+        <td bgcolor="#D6E3FB" class="intest">gust</td>
+        <td width="73" bgcolor="#C8F2C2" class="intest">dir</td>
+        <td width="73" bgcolor="#C8F2C2" class="intest">dir</td>
+        <td width="73" bgcolor="#C8F2C2" class="intest">ht </td>
+        <td width="73" bgcolor="#C8F2C2" class="intest">per</td>
+        <td bgcolor="#C8F2C2" class="intest">ht</td>
+        <td bgcolor="#F7D1D1" class="intest">air</td>
+        <td bgcolor="#F7D1D1" class="intest">amnt</td>
+        <td bgcolor="#F7D1D1" class="intest">&nbsp;</td>
+      </tr>
+
+      <tr style="font-weight: bold" ;>
+        <td bgcolor="#D6E3FB" class="intest">deg</td>
+        <td bgcolor="#D6E3FB" class="intest">&nbsp;</td>
+        <td bgcolor="#D6E3FB" class="intest">kn</td>
+        <td bgcolor="#D6E3FB" class="intest">deg</td>
+        <td bgcolor="#D6E3FB" class="intest">&nbsp;</td>
+        <td bgcolor="#D6E3FB" class="intest">kn</td>
+        <td bgcolor="#D6E3FB" class="intest">kn</td>
+        <td bgcolor="#C8F2C2" class="intest">deg</td>
+        <td bgcolor="#C8F2C2" class="intest">&nbsp;</td>
+        <td bgcolor="#C8F2C2" class="intest">m</td>
+        <td bgcolor="#C8F2C2" class="intest">s</td>
+        <td bgcolor="#C8F2C2" class="intest">m</td>
+        <td width="73" bgcolor="#F7D1D1" class="intest">degC</td>
+        <td width="73" bgcolor="#F7D1D1" class="intest">oktas</td>
+        <td width="73" bgcolor="#F7D1D1" class="intest">mm/1h</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_1</td>
+        <td>@winddirez_1</td>
+        <td height="20">@winddir_1</td>
+        <td height="20">@windspeed_1</td>
+        <td>@wind50dir_1</td>
+        <td>@wind50direz_1</td>
+        <td>@windspeed50_1</td>
+        <td height="20">@gust_1</td>
+        <td height="20">@wavedir_1</td>
+        <td>@wavedirez_1</td>
+        <td>@waveht_1</td>
+        <td height="20">@waveper_1</td>
+        <td height="20">@wavemax_1</td>
+        <td height="20">@temp_1</td>
+        <td height="20">@totcld_1</td>
+        <td height="20">@pcp_1</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_2</td>
+        <td>@winddirez_2</td>
+        <td height="20">@winddir_2</td>
+        <td height="20">@windspeed_2</td>
+        <td>@wind50dir_2</td>
+        <td>@wind50direz_2</td>
+        <td>@windspeed50_2</td>
+        <td height="20">@gust_2</td>
+        <td height="20">@wavedir_2</td>
+        <td>@wavedirez_2</td>
+        <td>@waveht_2</td>
+        <td height="20">@waveper_2&nbsp;</td>
+        <td height="20">@wavemax_2</td>
+        <td height="20">@temp_2</td>
+        <td height="20">@totcld_2</td>
+        <td height="20">@pcp_2</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_3</td>
+        <td>@winddirez_3</td>
+        <td height="20">@winddir_3</td>
+        <td height="20">@windspeed_3</td>
+        <td>@wind50dir_3</td>
+        <td>@wind50direz_3</td>
+        <td>@windspeed50_3</td>
+        <td height="20">@gust_3</td>
+        <td height="20">@wavedir_3</td>
+        <td>@wavedirez_3</td>
+        <td>@waveht_3</td>
+        <td height="20">@waveper_3&nbsp;</td>
+        <td height="20">@wavemax_3</td>
+        <td height="20">@temp_3</td>
+        <td height="20">@totcld_3</td>
+        <td height="20">@pcp_3</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_4</td>
+        <td>@winddirez_4</td>
+        <td height="20">@winddir_4</td>
+        <td height="20">@windspeed_4</td>
+        <td>@wind50dir_4</td>
+        <td>@wind50direz_4</td>
+        <td>@windspeed50_4</td>
+        <td height="20">@gust_4</td>
+        <td height="20">@wavedir_4</td>
+        <td>@wavedirez_4</td>
+        <td>@waveht_4</td>
+        <td height="20">@waveper_4&nbsp;</td>
+        <td height="20">@wavemax_4</td>
+        <td height="20">@temp_4</td>
+        <td height="20">@totcld_4</td>
+        <td height="20">@pcp_4</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_5</td>
+        <td>@winddirez_5</td>
+        <td height="20">@winddir_5</td>
+        <td height="20">@windspeed_5</td>
+        <td>@wind50dir_5</td>
+        <td>@wind50direz_5</td>
+        <td>@windspeed50_5</td>
+        <td height="20">@gust_5</td>
+        <td height="20">@wavedir_5</td>
+        <td>@wavedirez_5</td>
+        <td>@waveht_5</td>
+        <td height="20">@waveper_5&nbsp;</td>
+        <td height="20">@wavemax_5</td>
+        <td height="20">@temp_5</td>
+        <td height="20">@totcld_5</td>
+        <td height="20">@pcp_5</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_6</td>
+        <td>@winddirez_6</td>
+        <td height="20">@winddir_6</td>
+        <td height="20">@windspeed_6</td>
+        <td>@wind50dir_6</td>
+        <td>@wind50direz_6</td>
+        <td>@windspeed50_6</td>
+        <td height="20">@gust_6</td>
+        <td height="20">@wavedir_6</td>
+        <td>@wavedirez_6</td>
+        <td>@waveht_6</td>
+        <td height="20">@waveper_6&nbsp;</td>
+        <td height="20">@wavemax_6</td>
+        <td height="20">@temp_6</td>
+        <td height="20">@totcld_6</td>
+        <td height="20">@pcp_6</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_7</td>
+        <td>@winddirez_7</td>
+        <td height="20">@winddir_7</td>
+        <td height="20">@windspeed_7</td>
+        <td>@wind50dir_7</td>
+        <td>@wind50direz_7</td>
+        <td>@windspeed50_7</td>
+        <td height="20">@gust_7</td>
+        <td height="20">@wavedir_7</td>
+        <td>@wavedirez_7</td>
+        <td>@waveht_7</td>
+        <td height="20">@waveper_7&nbsp;</td>
+        <td height="20">@wavemax_7</td>
+        <td height="20">@temp_7</td>
+        <td height="20">@totcld_7</td>
+        <td height="20">@pcp_7</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_8</td>
+        <td>@winddirez_8</td>
+        <td height="20">@winddir_8</td>
+        <td height="20">@windspeed_8</td>
+        <td>@wind50dir_8</td>
+        <td>@wind50direz_8</td>
+        <td>@windspeed50_8</td>
+        <td height="20">@gust_8</td>
+        <td height="20">@wavedir_8</td>
+        <td>@wavedirez_8</td>
+        <td>@waveht_8</td>
+        <td height="20">@waveper_8&nbsp;</td>
+        <td height="20">@wavemax_8</td>
+        <td height="20">@temp_8</td>
+        <td height="20">@totcld_8</td>
+        <td height="20">@pcp_8</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_9</td>
+        <td>@winddirez_9</td>
+        <td height="20">@winddir_9</td>
+        <td height="20">@windspeed_9</td>
+        <td>@wind50dir_9</td>
+        <td>@wind50direz_9</td>
+        <td>@windspeed50_9</td>
+        <td height="20">@gust_9</td>
+        <td height="20">@wavedir_9</td>
+        <td>@wavedirez_9</td>
+        <td>@waveht_9</td>
+        <td height="20">@waveper_9&nbsp;</td>
+        <td height="20">@wavemax_9</td>
+        <td height="20">@temp_9</td>
+        <td height="20">@totcld_9</td>
+        <td height="20">@pcp_9</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_10</td>
+        <td>@winddirez_10</td>
+        <td height="20">@winddir_10</td>
+        <td height="20">@windspeed_10</td>
+        <td>@wind50dir_10</td>
+        <td>@wind50direz_10</td>
+        <td>@windspeed50_10</td>
+        <td height="20">@gust_10</td>
+        <td height="20">@wavedir_10</td>
+        <td>@wavedirez_10</td>
+        <td>@waveht_10</td>
+        <td height="20">@waveper_10&nbsp;</td>
+        <td height="20">@wavemax_10</td>
+        <td height="20">@temp_10</td>
+        <td height="20">@totcld_10</td>
+        <td height="20">@pcp_10</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_11</td>
+        <td>@winddirez_11</td>
+        <td height="20">@winddir_11</td>
+        <td height="20">@windspeed_11</td>
+        <td>@wind50dir_11</td>
+        <td>@wind50direz_11</td>
+        <td>@windspeed50_11</td>
+        <td height="20">@gust_11</td>
+        <td height="20">@wavedir_11</td>
+        <td>@wavedirez_11</td>
+        <td>@waveht_11</td>
+        <td height="20">@waveper_11&nbsp;</td>
+        <td height="20">@wavemax_11</td>
+        <td height="20">@temp_11</td>
+        <td height="20">@totcld_11</td>
+        <td height="20">@pcp_11</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_12</td>
+        <td>@winddirez_12</td>
+        <td height="20">@winddir_12</td>
+        <td height="20">@windspeed_12</td>
+        <td>@wind50dir_12</td>
+        <td>@wind50direz_12</td>
+        <td>@windspeed50_12</td>
+        <td height="20">@gust_12</td>
+        <td height="20">@wavedir_12</td>
+        <td>@wavedirez_12</td>
+        <td>@waveht_12</td>
+        <td height="20">@waveper_12&nbsp;</td>
+        <td height="20">@wavemax_12</td>
+        <td height="20">@temp_12</td>
+        <td height="20">@totcld_12</td>
+        <td height="20">@pcp_12</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_13</td>
+        <td>@winddirez_13</td>
+        <td height="20">@winddir_13</td>
+        <td height="20">@windspeed_13</td>
+        <td>@wind50dir_13</td>
+        <td>@wind50direz_13</td>
+        <td>@windspeed50_13</td>
+        <td height="20">@gust_13</td>
+        <td height="20">@wavedir_13</td>
+        <td>@wavedirez_13</td>
+        <td>@waveht_13</td>
+        <td height="20">@waveper_13&nbsp;</td>
+        <td height="20">@wavemax_13</td>
+        <td height="20">@temp_13</td>
+        <td height="20">@totcld_13</td>
+        <td height="20">@pcp_13</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_14</td>
+        <td>@winddirez_14</td>
+        <td height="20">@winddir_14</td>
+        <td height="20">@windspeed_14</td>
+        <td>@wind50dir_14</td>
+        <td>@wind50direz_14</td>
+        <td>@windspeed50_14</td>
+        <td height="20">@gust_14</td>
+        <td height="20">@wavedir_14</td>
+        <td>@wavedirez_14</td>
+        <td>@waveht_14</td>
+        <td height="20">@waveper_14</td>
+        <td height="20">@wavemax_14</td>
+        <td height="20">@temp_14</td>
+        <td height="20">@totcld_14</td>
+        <td height="20">@pcp_14</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_15</td>
+        <td>@winddirez_15</td>
+        <td height="20">@winddir_15</td>
+        <td height="20">@windspeed_15</td>
+        <td>@wind50dir_15</td>
+        <td>@wind50direz_15</td>
+        <td>@windspeed50_15</td>
+        <td height="20">@gust_15</td>
+        <td height="20">@wavedir_15</td>
+        <td>@wavedirez_15</td>
+        <td>@waveht_15</td>
+        <td height="20">@waveper_15&nbsp;</td>
+        <td height="20">@wavemax_15</td>
+        <td height="20">@temp_15</td>
+        <td height="20">@totcld_15</td>
+        <td height="20">@pcp_15</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_16</td>
+        <td>@winddirez_16</td>
+        <td height="20">@winddir_16</td>
+        <td height="20">@windspeed_16</td>
+        <td>@wind50dir_16</td>
+        <td>@wind50direz_16</td>
+        <td>@windspeed50_16</td>
+        <td height="20">@gust_16</td>
+        <td height="20">@wavedir_16</td>
+        <td>@wavedirez_16</td>
+        <td>@waveht_16</td>
+        <td height="20">@waveper_16&nbsp;</td>
+        <td height="20">@wavemax_16</td>
+        <td height="20">@temp_16</td>
+        <td height="20">@totcld_16</td>
+        <td height="20">@pcp_16</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_17</td>
+        <td>@winddirez_17</td>
+        <td height="20">@winddir_17</td>
+        <td height="20">@windspeed_17</td>
+        <td>@wind50dir_17</td>
+        <td>@wind50direz_17</td>
+        <td>@windspeed50_17</td>
+        <td height="20">@gust_17</td>
+        <td height="20">@wavedir_17</td>
+        <td>@wavedirez_17</td>
+        <td>@waveht_17</td>
+        <td height="20">@waveper_17&nbsp;</td>
+        <td height="20">@wavemax_17</td>
+        <td height="20">@temp_17</td>
+        <td height="20">@totcld_17</td>
+        <td height="20">@pcp_17</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_18</td>
+        <td>@winddirez_18</td>
+        <td height="20">@winddir_18</td>
+        <td height="20">@windspeed_18</td>
+        <td>@wind50dir_18</td>
+        <td>@wind50direz_18</td>
+        <td>@windspeed50_18</td>
+        <td height="20">@gust_18</td>
+        <td height="20">@wavedir_18</td>
+        <td>@wavedirez_18</td>
+        <td>@waveht_18</td>
+        <td height="20">@waveper_18&nbsp;</td>
+        <td height="20">@wavemax_18</td>
+        <td height="20">@temp_18</td>
+        <td height="20">@totcld_18</td>
+        <td height="20">@pcp_18</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_19</td>
+        <td>@winddirez_19</td>
+        <td height="20">@winddir_19</td>
+        <td height="20">@windspeed_19</td>
+        <td>@wind50dir_19</td>
+        <td>@wind50direz_19</td>
+        <td>@windspeed50_19</td>
+        <td height="20">@gust_19</td>
+        <td height="20">@wavedir_19</td>
+        <td>@wavedirez_19</td>
+        <td>@waveht_19</td>
+        <td height="20">@waveper_19</td>
+        <td height="20">@wavemax_19</td>
+        <td height="20">@temp_19</td>
+        <td height="20">@totcld_19</td>
+        <td height="20">@pcp_19</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_20</td>
+        <td>@winddirez_20</td>
+        <td height="20">@winddir_20</td>
+        <td height="20">@windspeed_20</td>
+        <td>@wind50dir_20</td>
+        <td>@wind50direz_20</td>
+        <td>@windspeed50_20</td>
+        <td height="20">@gust_20</td>
+        <td height="20">@wavedir_20</td>
+        <td>@wavedirez_20</td>
+        <td>@waveht_20</td>
+        <td height="20">@waveper_20&nbsp;</td>
+        <td height="20">@wavemax_20</td>
+        <td height="20">@temp_20</td>
+        <td height="20">@totcld_20</td>
+        <td height="20">@pcp_20</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_21</td>
+        <td>@winddirez_21</td>
+        <td height="20">@winddir_21</td>
+        <td height="20">@windspeed_21</td>
+        <td>@wind50dir_21</td>
+        <td>@wind50direz_21</td>
+        <td>@windspeed50_21</td>
+        <td height="20">@gust_21</td>
+        <td height="20">@wavedir_21</td>
+        <td>@wavedirez_21</td>
+        <td>@waveht_21</td>
+        <td height="20">@waveper_21&nbsp;</td>
+        <td height="20">@wavemax_21</td>
+        <td height="20">@temp_21</td>
+        <td height="20">@totcld_21</td>
+        <td height="20">@pcp_21</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_22</td>
+        <td>@winddirez_22</td>
+        <td height="20">@winddir_22</td>
+        <td height="20">@windspeed_22</td>
+        <td>@wind50dir_22</td>
+        <td>@wind50direz_22</td>
+        <td>@windspeed50_22</td>
+        <td height="20">@gust_22</td>
+        <td height="20">@wavedir_22</td>
+        <td>@wavedirez_22</td>
+        <td>@waveht_22</td>
+        <td height="20">@waveper_22&nbsp;</td>
+        <td height="20">@wavemax_22</td>
+        <td height="20">@temp_22</td>
+        <td height="20">@totcld_22</td>
+        <td height="20">@pcp_22</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_23</td>
+        <td>@winddirez_23</td>
+        <td height="20">@winddir_23</td>
+        <td height="20">@windspeed_23</td>
+        <td>@wind50dir_23</td>
+        <td>@wind50direz_23</td>
+        <td>@windspeed50_23</td>
+        <td height="20">@gust_23</td>
+        <td height="20">@wavedir_23</td>
+        <td>@wavedirez_23</td>
+        <td>@waveht_23</td>
+        <td height="20">@waveper_23&nbsp;</td>
+        <td height="20">@wavemax_23</td>
+        <td height="20">@temp_23</td>
+        <td height="20">@totcld_23</td>
+        <td height="20">@pcp_23</td>
+      </tr>
+      <tr style="height: 18px;">
+        <td class="data">@datetime_24</td>
+        <td>@winddirez_24</td>
+        <td height="20">@winddir_24</td>
+        <td height="20">@windspeed_24</td>
+        <td>@wind50dir_24</td>
+        <td>@wind50direz_24</td>
+        <td>@windspeed50_24</td>
+        <td height="20">@gust_24</td>
+        <td height="20">@wavedir_24</td>
+        <td>@wavedirez_24</td>
+        <td>@waveht_24</td>
+        <td height="20">@waveper_24&nbsp;</td>
+        <td height="20">@wavemax_24</td>
+        <td height="20">@temp_24</td>
+        <td height="20">@totcld_24</td>
+        <td height="20">@pcp_24</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p class="pagenum">page @pagenum of @pagetot</p>
+
+</body>
+
+</html>

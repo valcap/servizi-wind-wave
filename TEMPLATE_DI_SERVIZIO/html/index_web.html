@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wind and Wave Forecast</title>
+  <style>
+    h2 {
+      font-size: 28px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+    }
+    h3 {
+      font-size: 20px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+    }
+    .nota {
+      font-size: 12px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+    position: relative;
+    text-align: center;
+    color: rgb(0, 0, 0);
+  }
+
+  /* Bottom right text */
+  .bottom-right {
+    position: relative;
+    bottom: 35px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  </style>
+</head>
+
+<body>
+  <table width="955" border="0" align="center">
+    <tbody>
+      <tr>
+        <th width="600" scope="col"><img src="logo_lamma.png"
+            width="180" /></th>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Wind and Wave Forecast for <em>@NAME_OF_SERVICE</em> </h2>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h3>Issued on: @dateupd</h3>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  </p>
+  <br/>
+
+   <p><a href="Forecast_Lamma_@daterun_1.pdf">@NAME_OF_SERVICE - @daterun &nbsp;PDF</a>
+  </p>
+  <p>&nbsp;</p>
+
+  <map id="punti_geo" name="punti_geo">  
+    <area alt="" title="" href="Forecast_Lamma_@daterun_1.pdf" coords="216,419,245,447" shape="rect">
+    </map>
+</body>
+
+</html>
+

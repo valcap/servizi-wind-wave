@@ -1,0 +1,40 @@
+function drawpoint(args)
+          filelist = subwrd(args,1)
+
+*w punti d'interesse
+il=0
+while (il < 100)
+  ret=read(filelist);err=sublin(ret,1)
+  if err=2
+    ile=il
+    break
+  endif
+  il=il+1
+endwhile
+ret=close(filelist);err=sublin(ret,1)
+
+il=0
+while (il < ile)
+  ret=read(filelist);tmp=sublin(ret,2)
+  prog=subwrd(tmp,1)
+  locname=subwrd(tmp,2)
+  mlon=subwrd(tmp,3)
+  mlat=subwrd(tmp,4)
+  if ( mlon > _lonmin )
+    if ( mlon < _lonmax )
+      if ( mlat > _latmin )
+        if ( mlat < _latmax)
+          'q w2xy 'mlon' 'mlat
+          mxp=subwrd(result,3)
+          myp=subwrd(result,6)
+          'set string 1 bl 6'
+          'set strsiz 0.12'
+          'draw mark 3 'mxp' 'myp' 0.12'
+          'draw string 'mxp+0.1' 'myp-0.03' 'locname
+        endif
+      endif
+    endif
+  endif
+  il = il +1
+endwhile
+ret=close(filelist);err=sublin(ret,1)

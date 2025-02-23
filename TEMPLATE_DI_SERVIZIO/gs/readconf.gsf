@@ -1,0 +1,67 @@
+function readconf(args)
+         fileconf = subwrd(args,1)
+         hh = subwrd(args,2)
+         area = subwrd(args,3)
+
+run = hh%z
+ext = run'.nc'
+
+ret=read(fileconf);tmp=sublin(ret,2);_modelname=subwrd(tmp,3)
+ret=read(fileconf);tmp=sublin(ret,2);ditmp=subwrd(tmp,3);_dirin=ditmp
+ret=read(fileconf);tmp=sublin(ret,2);dotmp=subwrd(tmp,3);_dirout=dotmp
+ret=read(fileconf);tmp=sublin(ret,2);_dirleg=subwrd(tmp,3)
+ret=read(fileconf);tmp=sublin(ret,2);_modtothr=subwrd(tmp,3)
+ret=read(fileconf);tmp=sublin(ret,2);_modtstep=subwrd(tmp,3)
+ret=read(fileconf);_tit1=sublin(ret,2)
+ret=read(fileconf);_tit2=sublin(ret,2)
+***************************************************************
+il=0; ile=1000
+while (il < ile)
+  ret=read(fileconf);tmp=sublin(ret,2);check=subwrd(tmp,3)
+  say 'CHECK: 'check
+  if check=area
+    say il
+    say ' ENTRO'
+    say 'Area 'area
+    ret=read(fileconf);tmp=sublin(ret,2)
+    say 'TMP:' tmp
+    ret=read(fileconf);tmp=sublin(ret,2);_areaname=subwrd(tmp,3)
+    ret=read(fileconf);tmp=sublin(ret,2);_latmin=subwrd(tmp,3);_latmax=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_lonmin=subwrd(tmp,3);_lonmax=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_paxmin=subwrd(tmp,3);_paxmax=subwrd(tmp,4);_paymin=subwrd(tmp,5);_paymax=subwrd(tmp,6)
+    ret=read(fileconf);tmp=sublin(ret,2);_cbarnd=subwrd(tmp,3);_cbarnvo=subwrd(tmp,4);_cbarnx=subwrd(tmp,5);_cbarny=subwrd(tmp,6)
+    ret=read(fileconf);tmp=sublin(ret,2);_xinit=subwrd(tmp,3);_yinit=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_xvalid=subwrd(tmp,3);_yvalid=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_xtau=subwrd(tmp,3);_ytau=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_xtit1=subwrd(tmp,3);_ytit1=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_xtit2=subwrd(tmp,3);_ytit2=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_xcap1=subwrd(tmp,3);_ycap1=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_xcap2=subwrd(tmp,3);_ycap2=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_uskp=subwrd(tmp,3);_vskp=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_arrhd=subwrd(tmp,3);_arrscl=subwrd(tmp,4)
+    ret=read(fileconf);tmp=sublin(ret,2);_digsz=subwrd(tmp,3)
+    break
+  endif
+  il=il+1
+endwhile
+
+*_filectl=_dirin'/'_modelname'.'ext
+*_filectl=_dirin'/'run'/all.'_modelname'.'run'.grb2.shf.ctl'
+_filemask=_dirleg'/'_mask
+
+say "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+say 'FILECONF: 'fileconf
+say 'DIRIN: '_dirin
+say 'DIROUT: '_dirout
+say 'RUN: 'run
+say 'AREA: 'area
+say 'AREANAME: '_areaname
+say 'MODTSTEP: '_modtstep
+say 'MODTOTHR: '_modtothr
+say 'GRADS ETIME: '_etime
+say 'TIT1: '_tit1
+say 'TIT2: '_tit2
+say 'LAT: '_latmin' '_latmax
+say 'LON: '_lonmin' '_lonmax
+say 'PAREA: '_paxmin' '_paxmax' '_paymin' '_paymax
+say 'UVSKP: '_uskp' '_vskp

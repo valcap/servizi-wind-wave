@@ -1,0 +1,105 @@
+function drawshp(args)
+          area = subwrd(args,1)
+
+* SHP FILE GADM 
+* /cluster/universal/grads/shp/gadm/v3.6
+* gadm = world
+* _ITA = italia (ce ne sono tante, controllare il nome)
+* levels
+* 0 = country boundaries
+* 1 = regions
+* 2 = province
+* 3 = comuni
+
+'set rgb 99 225 225 225'
+'set rgb 98 255 255 230'
+'set rgb 97 180 180 180'
+'set rgb 96 160 160 160'
+'set rgb 95  80  80  80'
+'set rgb 94 235 235 235'
+'set rgb 93 240 216 128'
+'set shpopts 98'
+'set line 1 1 3'
+'draw shp gadm36_0'
+
+if (area=A | area=B | area=C | area=D | area=E | area=F | area=G | area=AB | area=Z | area=Q)
+  'set line 99 1 3'
+  'draw shp gadm36_ITA_2'
+  'draw shp gadm36_FRA_2'
+  'set shpopts -1'
+  'set line 97 1 6'
+  'draw shp gadm36_ITA_1'
+  'draw shp gadm36_FRA_1'
+  'set line 1 1 6'
+  'draw shp gadm36_ITA_0'
+  'draw shp gadm36_FRA_0'
+endif
+
+if (area=H)
+  'set line 94 1 6'
+  'draw shp gadm36_ITA_1'
+  'draw shp gadm36_FRA_1'
+  'set shpopts -1'
+  'set line 1 1 6'
+  'draw shp gadm36_ITA_0'
+  'draw shp gadm36_FRA_0'
+endif
+
+if (area=AA)
+  'set line 0 1 3'
+  'draw recf 0.41 7 2 7.99'
+  'draw recf 8.5 6 10.89 7.99'
+  'set line 15 1 3'
+  'set shpopts 98'
+  'draw shp gadm36_0'
+endif
+
+if (area=Y)
+  'set line 0 1 3'
+  'draw recf 0.47 6 3.5 7.97'
+  'set shpopts 98'
+  'set line 1 1 3'
+  'draw shp gadm36_0'
+endif
+
+if (area=I)
+  'set line 0 1 3'
+  'draw recf 4.3 7 7 7.97'
+  'set shpopts 98'
+  'set line 1 1 3'
+  'draw shp gadm36_0'
+endif
+
+if (area=AG)
+  'set line 0 1 3'
+  'draw recf 9.02 6 9.9 7.3'
+  'draw recf 8.6 6 9.02 6.63'
+  'draw recf 8.1 5.9 8.6 6.3'
+  'set shpopts 98'
+  'set line 1 1 3'
+  'draw shp gadm36_0'
+endif
+
+if (area=M | area=L | area=N | area=O | area=P | area=S | area=T | area=U | area=V | area=W | area=X)
+  'set line 99 1 3'
+  'draw shp gadm36_ITA_3'
+  'draw shp gadm36_FRA_3'
+  'set shpopts -1'
+  'set line 96 1 3'
+  'draw shp gadm36_ITA_2'
+  'draw shp gadm36_FRA_2'
+  'set shpopts -1'
+  'set line 95 1 3'
+  'draw shp gadm36_ITA_1'
+  'draw shp gadm36_FRA_1'
+  'set shpopts -1'
+  'set line 1 1 6'
+  'draw shp gadm36_ITA_0'
+  'draw shp gadm36_FRA_0'
+endif
+
+if (area=RAI)
+  'set shpopts 93'
+  'set line 1 1 3'
+  'draw shp gadm36_0'
+endif

@@ -1,0 +1,83 @@
+#!/bin/bash
+###########################################################################
+#
+# Name:         RUNNING SERVICES
+# Date:         20/02/2025
+# Author:       Valerio Capecchi (capecchi@lamma.toscana.it; valcap74@gmail.com)
+# What:         Create pdf files with wind/wave forecast
+#               and send an email to the distribution list
+# ATT:          l'env file deve essere $HOME/scripts/etc/ww305gfs.env
+# ESEMPIO:      $0 $HOME/scripts/etc/ww305gfs.env 00 120"
+# ESEMPIO:      $0 $HOME/scripts/etc/ww305gfs.env 12 132"
+###########################################################################
+source $HOME/scripts/util/init.sh $1 $2 $3
+exec 1>$LOGFILE
+exec 2>&1
+###########################################################################
+# LOCAL DEFINITIONS da mettere poi nel file env
+###########################################################################
+notice "START $0 $1 $2 $3"
+NRETS=50
+SLEEP=300
+LIST_SERVICES=$HOME'/scripts/services/LISTA_SERVIZI_ATTIVI'
+if [ ! -e $LIST_SERVICES ]; then
+  echo "ops missing $LIST_SERVICES"
+  exit 8;
+fi
+
+###########################################################################
+# FILE WAVE (NetCDF format)
+MODELWAVE=ww305gfs
+DIRWAVE=/data01/$MODELWAVE/$run
+[ ! -d $DIRWAVE ] && { notice "$DIRWAVE NOT FOUND...EXITING"; exit 8; }
+FILEWAVE=${MODELWAVE}.${run}.ectable.nc
+OKFILEWAVE=$DIRWAVE/OKFILE.${FILEWAVE}
+for ((iret = 1; iret <= $NRETS; iret++)); do
+  if [ $iret -eq $NRETS ]; then
+    notice "MAXTRY reached: OKFILE NOT FOUND, EXIT!!!"
+    exit 8
+  fi
+  if [ -f $OKFILEWAVE ]; then
+    grep $RUNDATEHH $OKFILEWAVE &>/dev/null
+    if [ $? -eq 0 ]; then
+      notice "FOUND $OKFILEWAVE"
+      break
+    fi
+  fi
+  sleep $SLEEP
+done
+
+###########################################################################
+# FILE ATMO (Grib format)
+MODELATMO=mol05gfs
+DIRATMO=/data01/$MODELATMO/$run
+[ ! -d $DIRATMO ] && { notice "$DIRATMO NOT FOUND...EXITING"; exit 8; }
+FILEATMO=all.${MODELATMO}.${run}.grb2.shf
+OKFILEATMO=$DIRATMO/OKFILE.$FILEATMO
+for ((iret = 1; iret <= $NRETS; iret++)); do
+  if [ $iret -eq $NRETS ]; then
+    notice "MAXTRY reached: OKFILE NOT FOUND, EXIT!!!"
+    exit 8
+  fi
+  if [ -f $OKFILEATMO ]; then
+    grep $RUNDATEHH $OKFILEATMO &>/dev/null
+    if [ $? -eq 0 ]; then
+      notice "FOUND $OKFILEATMO"
+      break
+    fi
+  fi
+  sleep $SLEEP
+done
+
+###########################################################################
+# Loop over services
+#for my_service in civitavecchia piombino genovaport vadoligure nextgeosolutionsP1866 CapraiaGorgona
+for my_service in `cat $LIST_SERVICES | grep YES | cut -d ';' -f1`
+do
+  notice "RUNNING sh $HOME/scripts/services/$my_service/MAIN.sh $file_env $HH $RLEN"
+  sh $HOME/scripts/services/$my_service/MAIN.sh $file_env $HH $RLEN
+done
+
+notice "END $0 $1 $2 $3"
+exit 0;
+

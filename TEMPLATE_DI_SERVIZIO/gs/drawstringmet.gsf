@@ -1,0 +1,43 @@
+function drawstringmet(args)
+          it = subwrd(args,1)
+*+++++++++++++++++++++++++++++++++++++++++++++++++++
+* Draw string
+*+++++++++++++++++++++++++++++++++++++++++++++++++++
+'set font 0'
+
+*'set string 1 tl 4'
+*'set strsiz 0.08'
+*'draw string '_xtit1' '_ytit1' '_namestn
+
+*'set string 1 tl 4'
+*'set strsiz 0.08'
+*'draw string '_xtit2' '_ytit2' '_namestn
+
+*'set string 1 tc 8'
+*'set strsiz 0.14'
+*'draw string '_xcap1' '_ycap1' Lat: '_stnlat
+
+*'set string 1 tl 8'
+*'set strsiz 0.14'
+*'draw string '_xvalid' '_yvalid' Meteogram:'
+
+'set string 4 tl 8'
+'set strsiz 0.14'
+'draw string '_xvalid+0.1' '_yvalid' '_namestn
+
+'set string 1 tl 8'
+'set strsiz 0.12'
+'draw string '_xinit-0.6' '_yinit' Init. Time:'
+
+'set string 4 tl 8'
+'set strsiz 0.12'
+'draw string '_xinit+0.4' '_yinit' '_initstr
+
+** TAU ****
+'set string 1 tl 8'
+'set strsiz 0.12'
+'draw string '_xtau-2.2' '_ytau' Lat= '_latstn'   Lon= '_lonstn
+
+*'set string 4 tl 8'
+*'set strsiz 0.12'
+*'draw string '_xtau+0.3' '_ytau' +'_namestn

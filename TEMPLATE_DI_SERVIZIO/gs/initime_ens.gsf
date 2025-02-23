@@ -1,0 +1,21 @@
+function initime(args)
+         anatime = subwrd(args,1)
+
+* Trovo init time e tstep
+'set t 'anatime
+'q time'
+initn=subwrd(result,6)
+tmp=subwrd(result,3)
+initn=zellerday(tmp)
+inith=substr(tmp,1,2)
+initd=substr(tmp,4,2)
+initm=substr(tmp,6,3)
+inity=substr(tmp,9,5)
+*_initstr=initn', 'initd' 'initm' 'inity'  'inith
+*_initstr=initn', 'initd' 'initm' 'inith
+*_initstr=initn', 'initd%initm%inity' 'inith'UTC'
+_initstr=initn', 'initd' 'initm' 'inity' 'inith'UTC'
+*_initstr=inith'UTC,'initd''initm''inity
+*_initstr=initn', 'inith' UTC'
+'set t 1'
+

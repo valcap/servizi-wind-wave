@@ -1,0 +1,14 @@
+function leadtime(args)
+         it = subwrd(args,1)
+
+* Trovo lead time
+'q time'
+leadn=subwrd(result,6)
+tmp=subwrd(result,3)
+leadn=zellerday(tmp)
+leadh=substr(tmp,1,2)
+leadd=substr(tmp,4,2)
+leadm=substr(tmp,6,3)
+leady=substr(tmp,9,5)
+*_leadstr=leadn','leadd''leadm''leady'  'leadh' UTC (+'_tauh')'
+_leadstr=leadn', 'leadd' 'leadm' 'leady'  'leadh' UTC'

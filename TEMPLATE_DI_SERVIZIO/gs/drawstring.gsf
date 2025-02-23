@@ -1,0 +1,63 @@
+function drawstring(args)
+          areaname = subwrd(args,1)
+          area = subwrd(args,2)
+*+++++++++++++++++++++++++++++++++++++++++++++++++++
+* Draw string
+*+++++++++++++++++++++++++++++++++++++++++++++++++++
+'set font 0'
+
+xmed=(_paxmin+_paxmax)/2
+ymed=_paymin-0.35
+
+xtit=_paxmin
+ytit=_paymax+0.48
+
+'set string 1 tl 4'
+'set strsiz 0.10'
+*'draw string '_xtit1' '_ytit1' '_tit1
+'draw string 'xtit' 'ytit' '_tit1
+
+'set string 1 tl 4'
+'set strsiz 0.10'
+'draw string 'xtit+1.7' 'ytit' '_tit2
+
+'set string 1 tr 4'
+'set strsiz 0.14'
+'draw string '9.92' 'ytit' '_areaname
+
+xmed=(_paxmin+_paxmax)/2
+ymed=_paymin-0.35
+
+'set string 1 c 8'
+'set strsiz 0.14'
+*'draw string '_xcap1' '_ycap1' '_cap1
+'draw string 'xmed' 'ymed' '_cap1
+
+'set string 1 tl 8'
+'set strsiz 0.14'
+'draw string '_xvalid' '_yvalid' Valid:'
+
+'set string 4 tl 8'
+'set strsiz 0.14'
+'draw string '_xvalid+0.65' '_yvalid' '_leadstr
+
+'set string 1 tl 8'
+'set strsiz 0.14'
+'draw string '_xinit+0.21' '_yinit' Init:'
+
+'set string 4 tr 8'
+'set strsiz 0.14'
+if (area=AA | area=H)
+  'draw string '10.9' '_yinit' '_inittstr
+else
+  'draw string '9.91' '_yinit' '_inittstr
+endif
+
+** TAU ****
+'set string 1 tl 8'
+'set strsiz 0.14'
+'draw string '_xtau' '_ytau' T='
+
+'set string 4 tl 8'
+'set strsiz 0.14'
+'draw string '_xtau+0.3' '_ytau' +'_tauh

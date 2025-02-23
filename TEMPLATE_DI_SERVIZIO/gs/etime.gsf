@@ -1,0 +1,9 @@
+function initime(args)
+         anatime = subwrd(args,1)
+
+* Trovo _etime
+'q file'
+tmp=sublin(result,5)
+_etime=subwrd(tmp,12)
+say 'ETIME: '_etime
+

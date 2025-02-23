@@ -1,0 +1,50 @@
+#!/bin/bash
+
+MY_NEW_SERVICE_NAME=$1
+if [ -z "$1" ]; then
+    echo "Errore: devi specificare un valore per MY_NEW_SERVICE_NAME."
+    echo "USAGE: $0 NOME_NUOVO_SERVIZIO (che non deve gia esistere...)"
+    exit 1
+fi
+CURDIR=$HOME'/scripts/services'
+cd $CURDIR
+if [ -d $MY_NEW_SERVICE_NAME ]; then
+  echo "il servizio $MY_NEW_SERVICE_NAME esiste gia...scegli un altro nome"
+  exit;
+fi
+if [ ! -d TEMPLATE_DI_SERVIZIO ]; then
+  echo "ops la directory TEMPLATE_DI_SERVIZIO con gli script di template non esiste"
+  exit;
+fi
+
+cp -fr TEMPLATE_DI_SERVIZIO $MY_NEW_SERVICE_NAME
+[ $? -ne 0 ] && { echo "ops cannot create $CURDIR/$MY_NEW_SERVICE_NAME"; exit; }
+cd $MY_NEW_SERVICE_NAME
+sed -i "s/NOME_SERVIZIO/$MY_NEW_SERVICE_NAME/" MAIN.sh
+sed -i "s/NOME_SERVIZIO/$MY_NEW_SERVICE_NAME/" ecmens_opendata/driver_ecmens_opendata.sh
+sed -i "s/NOME_SERVIZIO/$MY_NEW_SERVICE_NAME/" env/GRADS.CONF.TEMPLATE 
+cp html/copertina.html html/stocazzo
+cat html/stocazzo | sed -e "s/NOME_SERVIZIO/$MY_NEW_SERVICE_NAME/g" > html/copertina.html
+rm -f html/stocazzo
+
+cd $CURDIR/$MY_NEW_SERVICE_NAME/env/
+mv FILELIST.DET.TEMPLATE FILELIST.DET.$MY_NEW_SERVICE_NAME
+mv FILELIST.ENS.TEMPLATE FILELIST.ENS.$MY_NEW_SERVICE_NAME
+mv GRADS.CONF.TEMPLATE GRADS.CONF.$MY_NEW_SERVICE_NAME
+ln -sf GRADS.CONF.$MY_NEW_SERVICE_NAME GRADS.CONF
+ln -sf FILELIST.ENS.$MY_NEW_SERVICE_NAME FILELIST.ENS
+ln -sf FILELIST.DET.$MY_NEW_SERVICE_NAME FILELIST.DET
+cd -
+
+echo "DIRECTORY DI LAVORO:"
+echo "$CURDIR/$MY_NEW_SERVICE_NAME/"
+echo "RIMANGONO DA SETTARE I SEGUENTI FILES:"
+echo "$CURDIR/$MY_NEW_SERVICE_NAME/env/GRADS.CONF.$MY_NEW_SERVICE_NAME"
+echo "$CURDIR/$MY_NEW_SERVICE_NAME/env/FILELIST.ENS.$MY_NEW_SERVICE_NAME"
+echo "$CURDIR/$MY_NEW_SERVICE_NAME/env/FILELIST.DET.$MY_NEW_SERVICE_NAME"
+echo "$CURDIR/$MY_NEW_SERVICE_NAME/send_mail.py (per i destinatari della mail)"
+
+echo '+++++++++++++++++++++++++++++++++++++++++++++++++'
+echo 'HO FINITO'
+echo '+++++++++++++++++++++++++++++++++++++++++++++++++'
+exit 0;
