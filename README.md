@@ -48,12 +48,11 @@ Per creare un nuovo servizio, seguire questi passaggi:
    ```
    Ad esempio:
    ```
-   civitavecchia ; YES
-   piombino ; YES
-   genovaport ; YES
-   vadoligure ; YES
-   nextgeosolutionsP1866 ; YES
-   CapraiaGorgona ; YES
+   NOME_SERVIZIO ; ATTIVO
+   PORTO1 ; YES
+   CAVO1 ; YES
+   PORTO2 ; NO
+   REGATA1 ; YES
    NOME_NUOVO_SERVIZIO ; YES
    ```
 
