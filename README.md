@@ -83,6 +83,15 @@ Dopo aver personalizzato questi file, il servizio può essere eseguito normalmen
 ./runall_services
 ```
 
+### **send_mail.py**
+Contiene gli indirizzi della lista di distribuzione del servizio. E' possibile specificare indirizzi nella variabile `send_email_to` e nella variabile `send_email_cc`. Altre modifiche sono possibili nel testo dell'oggetto e della mail. Il numero di attachment è uguale al numero di punti specificati nel file `FILELIST.DET`
+
+Dopo aver personalizzato questi file, il servizio può essere eseguito normalmente tramite:
+```bash
+./runall_services
+```
+
+
 ## Esecuzione dei Servizi
 
 Per eseguire tutti i servizi attivi, utilizzare lo script `runall_services`:
