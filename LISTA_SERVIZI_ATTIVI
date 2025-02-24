@@ -1,7 +1,6 @@
-NOME_SERIVIZIO        ;    ATTIVO
-civitavecchia         ;    YES
-piombino              ;    YES
-genovaport            ;    YES
-vadoligure            ;    YES
-nextgeosolutionsP1866 ;    YES 
-CapraiaGorgona        ;    YES
+NOME_SERIVIZIO      ;    ATTIVO
+SERVIZIO_01         ;    YES
+SERVIZIO_02         ;    YES
+SERVIZIO_03         ;    NO
+SERVIZIO_04         ;    YES
+SERVIZIO_05         ;    NO
