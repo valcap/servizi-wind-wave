@@ -94,7 +94,7 @@ Questo script eseguirà in sequenza tutti i servizi elencati nel file `LISTA_SER
 
 ## Requisiti
 
-⚠️ **Nota Importante**: Il codice è stato sviluppato e testato specificamente per l'architettura della macchina `.78` presente sulla intranet aziendale. Il funzionamento su altre configurazioni non è garantito e potrebbe richiedere modifiche o adattamenti.
+⚠️ **Nota Importante**: Il codice è stato sviluppato e testato specificamente per l'architettura della macchina `postmare` presente sulla intranet aziendale. Il funzionamento su altre configurazioni non è garantito e potrebbe richiedere modifiche o adattamenti.
 
 
 - **Sistema Operativo**: Unix-like (ad esempio, Linux).
