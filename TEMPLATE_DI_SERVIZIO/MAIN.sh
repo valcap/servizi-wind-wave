@@ -6,7 +6,7 @@
 # Ver        : Servizio per NOME_SERVIZIO
 #
 # ATTENZIONE : LO SCRIPT VIENE LANCIATO DAL MAIN DEL WW3
-#              /home/meteop/scripts/ww3/MAIN.sh
+#              $HOME/scripts/ww3/MAIN.sh
 #              VA LANCIATO CON ENV DEL WW3  (ww305gfs)
 ############################################################################
 # Usage

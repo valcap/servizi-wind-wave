@@ -19,6 +19,7 @@ fi
 
 SERVICE=$1
 hh=$2
+MY_USER='MY_USER'
 
 ######################################
 # NOTHING SHOULD BE CHANGED BELOW HERE
@@ -28,7 +29,7 @@ hh=$2
 DIR=$HOME/scripts/services/$SERVICE
 DIRHTML=$DIR/html
 DIRWORK=$HOME/www/img/SERVICES/$SERVICE
-DIRURL="http://192.168.1.78/meteop/www/img/SERVICES/${SERVICE}"
+DIRURL="http://192.168.1.78/$MY_USER/www/img/SERVICES/${SERVICE}"
 
 # LOG
 FILELOG=$HOME/log/crea_tabella_${SERVICE}.log

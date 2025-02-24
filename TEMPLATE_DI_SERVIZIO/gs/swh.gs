@@ -90,7 +90,7 @@ drawloc
 
 * draw rotta nave
 'set line 1 1 14'
-'draw shp /home/meteop/grads/shp/WTYL-PTO-line'
+'draw shp $HOME/grads/shp/WTYL-PTO-line'
 
 * draw punti d'interesse
 drawpoint(filelist)
