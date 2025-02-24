@@ -18,7 +18,7 @@ Scripts per la creazione e l'esecuzione di servizi che forniscono bollettini met
 La directory di lavoro principale è:
 
 ```
-/home/meteop/scripts/services
+$HOME/scripts/services
 ```
 
 All'interno del repository, i principali file e directory sono:
@@ -66,22 +66,18 @@ Per personalizzare un nuovo servizio, è necessario modificare i seguenti file a
 
 ### **GRADS.CONF.$MY_NEW_SERVICE_NAME**
 Questo file definisce le impostazioni di visualizzazione e rendering dei dati meteo-marini. È possibile configurare:
-- La proiezione geografica e l'area di interesse.
-- La palette dei colori per le variabili meteo.
-- Le unità di misura per i dati visualizzati.
-- La risoluzione della griglia e la frequenza di aggiornamento.
+- le aree di interesse.
+- altre impostazioni di GrADS per generare i meteogrammi e le mappe di swh tra cui:
+  * La palette dei colori per le variabili meteo.
+  * Le unità di misura per i dati visualizzati.
+  * La risoluzione della griglia e la frequenza di aggiornamento.
+  * ...
 
 ### **FILELIST.ENS.$MY_NEW_SERVICE_NAME**
-Questo file elenca i dataset di ensemble che il servizio utilizzerà per generare i bollettini. Personalizzazioni possibili:
-- Aggiunta o rimozione di dataset.
-- Modifica delle fonti dati (es. modelli meteo specifici come WW3 o GFS).
-- Definizione degli intervalli temporali di interesse.
+Questo file contiene il o i punti su cui estrarre le informazioni meteo-marine per la parte di previsione a medio termine che si basa sui dati ECMWF-ENS
 
 ### **FILELIST.DET.$MY_NEW_SERVICE_NAME**
-Simile a `FILELIST.ENS`, ma dedicato ai dati deterministici ad alta risoluzione. Qui si possono:
-- Specificare i file con i dati deterministici.
-- Regolare le tempistiche di aggiornamento per dati più precisi.
-- Configurare il formato dei file in input.
+Simile a `FILELIST.ENS`, ma dedicato ai dati deterministici ad alta risoluzione.
 
 Dopo aver personalizzato questi file, il servizio può essere eseguito normalmente tramite:
 ```bash
@@ -102,15 +98,15 @@ Questo script eseguirà in sequenza tutti i servizi elencati nel file `LISTA_SER
 
 
 - **Sistema Operativo**: Unix-like (ad esempio, Linux).
-- **Dipendenze**: Assicurarsi di avere installato tutti i software necessari per l'esecuzione degli script e la generazione dei bollettini.
+- **Dipendenze**: Assicurarsi di avere installato tutti i software necessari per l'esecuzione degli script e la generazione dei bollettini (GrADS, librerie Python, etc...).
 
 ## Risoluzione Problemi
 
-Elenco di errori comuni e soluzioni suggerite.
+TODO
 
 ## Contributi
 
-Linee guida per chi vuole contribuire al codice.
+TODO
 
 ## Licenza
 
@@ -118,6 +114,6 @@ Questo progetto è distribuito sotto la licenza GPL-2.0. Per maggiori dettagli, 
 
 ## Contatti
 
-Come ottenere supporto o segnalare problemi.
+Valerio Capecchi; valcap74@gmail.com
 
 
