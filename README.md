@@ -1,6 +1,6 @@
 # servizi-wind-wave
 
-Il codice di questo progetto è disponibile su GitHub al seguente link: [GitHub Repository](https://github.com/valcap/servizi-wind-wave). Per ottenere una copia locale del repository, è possibile eseguire il seguente comando:
+Per ottenere una copia locale del repository, è possibile eseguire il seguente comando:
 
 ```bash
 git clone https://github.com/valcap/servizi-wind-wave.git
