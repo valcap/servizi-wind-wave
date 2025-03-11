@@ -46,6 +46,7 @@ _myrun='MYRUN'
 _mylon='loclon'
 _mylat='loclat'
 _mynam='locnam'
+_myendtime=16
 'set lon '_mylon
 'set lat '_mylat
 'q dims'
@@ -66,7 +67,7 @@ eini=subwrd(line,4)
 line=sublin(result,5)
 tend=subwrd(line,9)
 'set t 1'
-initime_ens(-21)
+initime_ens(-_myendtime)
 say 'Init date and time is: '_initstr
 ****************
 
@@ -87,7 +88,7 @@ _my_barcol=15
 ****************
 
 * Time and general settings
-'set t 1 last'
+'set t 1 '_myendtime
 'set gxout line'
 'set vrange 0 6'
 * Variables
@@ -156,7 +157,7 @@ _my_barcol=15
 ****************
 
 * Time and general settings
-'set t 1 last'
+'set t 1 '_myendtime
 'set gxout line'
 'set vrange 0 12'
 * Variables
@@ -218,7 +219,7 @@ _my_barcol=15
 'set string 4 tl 8'
 'draw string 6.9 8.20 '_initstr
 'set string 1 tl 8'
-'draw string 6 0.25 ECMWF ensemble - res 0.4 deg'
+'draw string 6 0.25 ECMWF ensemble - res 0.25 deg'
 
 * y labels
 'set line 0'
