@@ -73,10 +73,17 @@ Questo file definisce le impostazioni di visualizzazione e rendering dei dati me
   * ...
 
 ### **FILELIST.ENS.$MY_NEW_SERVICE_NAME**
-Questo file contiene il o i punti su cui estrarre le informazioni meteo-marine per la parte di previsione a medio termine che si basa sui dati ECMWF-ENS
+Questo file contiene il o i punti su cui estrarre le informazioni meteo-marine per la parte di previsione a medio termine che si basa sui dati ECMWF-ENS.
+ESEMPIO:
+1	NSH-Sard	9.18	39.10	0
+2	NSH-Sic	13.46	38.25	0
+3	OFS-West	10.21	38.24	0
+4	OFS-East	12.44	38.28	0
+ATTENZIONE: il file deve essere tab-separated!
 
 ### **FILELIST.DET.$MY_NEW_SERVICE_NAME**
 Simile a `FILELIST.ENS`, ma dedicato ai dati deterministici ad alta risoluzione.
+ATTENZIONE: il file deve essere tab-separated!
 
 Dopo aver personalizzato questi file, il servizio può essere eseguito normalmente tramite:
 ```bash
