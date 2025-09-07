@@ -70,6 +70,7 @@ Questo file definisce le impostazioni di visualizzazione e rendering dei dati me
   * La palette dei colori per le variabili meteo.
   * Le unità di misura per i dati visualizzati.
   * La risoluzione della griglia e la frequenza di aggiornamento.
+  * Sept 2025: è stata aggiunta una procedura che crea il file GRADS.CONF.$MY_NEW_SERVICE_NAME una volta che è stato definito FILELIST.DET.$MY_NEW_SERVICE_NAME. Procedura da testare ulteriormente...
   * ...
 
 ### **FILELIST.ENS.$MY_NEW_SERVICE_NAME**
