@@ -20,12 +20,12 @@ if [ -z "$1" ]; then
 fi
 SERVICE=$1
 # Variabili per la connessione SFTP
-SFTP_USER="MY_USER"
-SFTP_HOST="MY_HOST"
-SFTP_PORT=MY_PORT
+SFTP_USER="FTP_P1887_EC"
+SFTP_HOST="93.55.126.12"
+SFTP_PORT=2022
 REMOTE_DIR="/$SERVICE"
 # Imposta la password come variabile d'ambiente
-export SFTP_PASS="MY_PASS"
+export SFTP_PASS="3Xfhf*XY"
 # Percorso del file ZIP da inviare
 LOCAL_FILE="$HOME/www/img/SERVICES/${SERVICE}/Forecast*.zip"
 

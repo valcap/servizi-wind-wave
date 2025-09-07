@@ -17,19 +17,22 @@ if len(sys.argv) < 3:
     sys.exit(1)
 NAME_OF_SERVICE=sys.argv[1]
 rundate=sys.argv[2]
-bollettini_path = 'PATH_TO_OUTPUT_DATA/SERVICES/' + NAME_OF_SERVICE + '/'
-filelist = 'path_to_scripts_services/' + NAME_OF_SERVICE + '/env/FILELIST.DET'
+bollettini_path = '/home/meteop/www/img/SERVICES/' + NAME_OF_SERVICE + '/'
+filelist = '/home/meteop/scripts/services/' + NAME_OF_SERVICE + '/env/FILELIST.DET'
 if not os.path.exists(filelist):
     print("Errore: il file " + filelist + ' non esiste')
     sys.exit(1)
 
 # utente(i) a cui inviare l'email
 # TO
-send_email_to = "ME.STESSO@lamma.toscana.it"
+send_email_to = "meteo@lamma.toscana.it"
 send_email_to += ",NOME.COGNOME@INDIRIZZO"
 # CC
-send_email_cc = "unoCC@lamma.toscana.it"
-send_email_cc += ",altroCC@lamma.toscana.it"
+send_email_cc = "capecchi@lamma.toscana.it"
+send_email_cc += ",pasi@lamma.toscana.it"
+send_email_cc += ",gozzini@lamma.toscana.it"
+send_email_cc += ",tei@lamma.toscana.it"
+send_email_cc += ",rossi@lamma.toscana.it"
 
 
 #########################
@@ -57,8 +60,8 @@ def SendMail():
     COMMASPACE = ', '
 msg = MIMEMultipart()   
 msg['Subject'] = NAME_OF_SERVICE + ' - LaMMA Weather Forecast'
-msg['From'] = email.utils.formataddr(('Consorzio LaMMA - Meteo', 'mittente@lamma.toscana.it'))
-me = "mittente@lamma.toscana.it"
+msg['From'] = email.utils.formataddr(('Consorzio LaMMA - Meteo', 'meteo@lamma.toscana.it'))
+me = "meteo@lamma.toscana.it"
 to = send_email_to
 cc = send_email_cc
 rcpt = cc.split(",") + to.split(",")
@@ -89,12 +92,11 @@ with open(filelist, "r") as file:
 
 #########################
 # Spedisce la mail    
-server = smtplib.SMTP("IP_SERVER_POSTA", PORTA_SERVER_POSTA)
+server = smtplib.SMTP("172.16.1.2", 25)
 server.starttls()
 server.ehlo()
-server.login("UTENTE_SERVER_POSTA", "PASSWORD_SERVER_POSTA")
+server.login("meteo", "Vmy!!eehKU")
 server.sendmail(me, rcpt, msg.as_string())
 server.quit()
 
 print ("SentMail")
-

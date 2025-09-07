@@ -13,7 +13,7 @@ exec 2>&1
 SERVICE=$1
 DIRWWW=$HOME/www/img/SERVICES/$SERVICE
 DIRWEB=/www-data/lamma/servizi/$SERVICE
-ssh MY_USER@MY_IP <<EOF
+ssh webdata@172.16.1.13 <<EOF
 if [ ! -d "$DIRWEB" ]; then
     mkdir -p "$DIRWEB"
 fi
@@ -22,7 +22,7 @@ rm -f index.html
 exit
 EOF
 
-scp $DIRWWW/index.html.web MY_USER@MY_IP:$DIRWEB/index.html
-scp $DIRWWW/Forecast*.pdf MY_USER@MY_IP:$DIRWEB
+scp $DIRWWW/index.html.web webdata@172.16.1.13:$DIRWEB/index.html
+scp $DIRWWW/Forecast*.pdf webdata@172.16.1.13:$DIRWEB
 
 exit

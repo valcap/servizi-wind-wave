@@ -1,7 +1,7 @@
 filectl    = mol05gfs
 dirin      = /data01/mol05gfs
-dirout     = $HOME/www/img/SERVICES/NOME_SERVIZIO
-dirleg     = $HOME/grads/legend
+dirout     = /home/meteop/www/img/SERVICES/NOME_SERVIZIO
+dirleg     = /home/meteop/grads/legend
 tend       = 133
 tstep      = 1
 Consorzio LaMMA
@@ -44,8 +44,4 @@ xycapt2    = 5.0 0.20
 uvskip1    = 2 1
 arrow1     = 0.1 0.15
 digsiz     = 0.1
-*************************************************
-* PUNTO000N
-area = N
-*************************************************
-etcetcetc...
+
